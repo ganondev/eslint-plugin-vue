@@ -58,6 +58,8 @@ module.exports = {
     }
   }
 }
+
+${configs.flat.map((config) => `module.exports.configs['${config}'].plugins.vue = module.exports;`).join('\n')}
 `
 fs.writeFileSync(filePath, content)
 
